@@ -13,10 +13,10 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "dev.matchatea.juicebox.client.JuiceboxDataGenerator"
+      "dev.matchatea.juicebox.entity.JuiceboxDataGenerator"
     ],
     "client": [
-      "dev.matchatea.juicebox.client.JuiceboxClient"
+      "dev.matchatea.juicebox.JuiceboxClient"
     ],
     "main": [
       "dev.matchatea.juicebox.Juicebox"
