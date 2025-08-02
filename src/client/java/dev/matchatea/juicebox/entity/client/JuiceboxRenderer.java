@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 
 public class JuiceboxRenderer extends MobEntityRenderer<JuiceboxEntity, JuiceboxModel<JuiceboxEntity>> {
     private static final Identifier TEXTURE = new Identifier(Juicebox.MOD_ID, "textures/entity/juicebox.png");
+
     public JuiceboxRenderer(EntityRendererFactory.Context context) {
         super(context, new JuiceboxModel<>(context.getPart(ModModelLayers.JUICEBOX)), 0.6f);
     }
@@ -21,7 +22,7 @@ public class JuiceboxRenderer extends MobEntityRenderer<JuiceboxEntity, Juicebox
 
     @Override
     public void render(JuiceboxEntity mobEntity, float f, float g, MatrixStack matrixStack,
-                       VertexConsumerProvider vertexConsumerProvider, int i) {
+            VertexConsumerProvider vertexConsumerProvider, int i) {
         if (mobEntity instanceof JuiceboxEntity) {
             matrixStack.scale(0.6F, 0.6F, 0.6F);
         } else {

@@ -19,5 +19,4 @@ public class ModEntities {
     public static void registerModEntities() {
         Juicebox.LOGGER.info("Registering Entities for " + Juicebox.MOD_ID);
     }
-
 }

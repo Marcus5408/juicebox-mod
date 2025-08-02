@@ -5,6 +5,6 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
 public class ModModelLayers {
-    public static final EntityModelLayer JUICEBOX =
-            new EntityModelLayer(new Identifier(Juicebox.MOD_ID, "juicebox"), "main");
+    public static final EntityModelLayer JUICEBOX = new EntityModelLayer(new Identifier(Juicebox.MOD_ID, "juicebox"),
+            "main");
 }
