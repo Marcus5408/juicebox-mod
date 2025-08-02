@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 // Made with Blockbench 4.12.5
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class JuiceboxModel<T extends JuiceboxEntity> extends EntityModel<Entity> {
+public class JuiceboxModel<T extends JuiceboxEntity> extends EntityModel<T> {
 	private final ModelPart box;
 	private final ModelPart front;
 	private final ModelPart straw;
@@ -51,7 +51,7 @@ public class JuiceboxModel<T extends JuiceboxEntity> extends EntityModel<Entity>
 		return TexturedModelData.of(modelData, 64, 64);
 	}
 	@Override
-	public void setAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setAngles(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
