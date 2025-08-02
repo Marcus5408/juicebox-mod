@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "juicebox",
+  "version": "${version}",
+  "name": "juicebox",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/juicebox/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.matchatea.juicebox.client.JuiceboxDataGenerator"
+    ],
+    "client": [
+      "dev.matchatea.juicebox.client.JuiceboxClient"
+    ],
+    "main": [
+      "dev.matchatea.juicebox.Juicebox"
+    ]
+  },
+  "mixins": [
+    "juicebox.mixins.json",
+    {
+      "config": "juicebox.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
