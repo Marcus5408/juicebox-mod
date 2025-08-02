@@ -2,10 +2,12 @@
   "schemaVersion": 1,
   "id": "juicebox",
   "version": "${version}",
-  "name": "juicebox",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "name": "Juicebox",
+  "description": "Adds a Juicebox.",
+  "authors": ["Issac"],
+  "contact": {
+    "sources": "https://github.com/Marcus5408/juicebox-mod"
+  },
   "license": "All-Rights-Reserved",
   "icon": "assets/juicebox/icon.png",
   "environment": "*",
@@ -28,8 +30,8 @@
     }
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.17.0",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "~1.20.1"
   }
 }
