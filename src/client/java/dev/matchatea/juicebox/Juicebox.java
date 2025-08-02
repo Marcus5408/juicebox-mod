@@ -4,7 +4,7 @@ import dev.matchatea.juicebox.entity.ModEntities;
 import dev.matchatea.juicebox.entity.custom.JuiceboxEntity;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.entity.Entity;
+// ...existing code...
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

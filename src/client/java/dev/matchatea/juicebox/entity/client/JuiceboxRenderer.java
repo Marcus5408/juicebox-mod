@@ -25,7 +25,7 @@ public class JuiceboxRenderer extends MobEntityRenderer<JuiceboxEntity, Juicebox
         if (mobEntity instanceof JuiceboxEntity) {
             matrixStack.scale(0.6F, 0.6F, 0.6F);
         } else {
-            matrixStack.scale(1F, 1F, 1F);
+            matrixStack.scale(0.6F, 1F, 1F);
         }
         super.render(mobEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }

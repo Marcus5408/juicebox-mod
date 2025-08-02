@@ -5,8 +5,8 @@ import dev.matchatea.juicebox.entity.client.JuiceboxModel;
 import dev.matchatea.juicebox.entity.client.JuiceboxRenderer;
 import dev.matchatea.juicebox.entity.client.ModModelLayers;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityModelLayerRegistry;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
 public class JuiceboxClient implements ClientModInitializer {
     @Override
