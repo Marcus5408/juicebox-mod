@@ -7,7 +7,6 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,11 +18,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class JuiceboxEntity extends TameableEntity {
-    @Override
-    public net.minecraft.world.EntityView method_48926() {
-        return this.getWorld();
-    }
-
     public JuiceboxEntity(EntityType<? extends JuiceboxEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -33,14 +27,14 @@ public class JuiceboxEntity extends TameableEntity {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new AnimalMateGoal(this, 1));
         this.goalSelector.add(2, new TemptGoal(this, 0.6F, Ingredient.ofItems(
+                Items.ENCHANTED_GOLDEN_APPLE,
+                Items.GOLDEN_APPLE,
+                Items.GOLDEN_CARROT,
                 Items.APPLE,
                 Items.BEETROOT,
                 Items.CARROT,
                 Items.CHORUS_FRUIT,
-                Items.ENCHANTED_GOLDEN_APPLE,
-                Items.GOLDEN_APPLE,
                 Items.GLOW_BERRIES,
-                Items.GOLDEN_CARROT,
                 Items.HONEY_BOTTLE,
                 Items.MELON_SLICE,
                 Items.SWEET_BERRIES), false));
@@ -105,6 +99,11 @@ public class JuiceboxEntity extends TameableEntity {
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.JUICEBOX.create(world);
+    }
+
+    @Override
+    public net.minecraft.world.EntityView method_48926() {
+        return this.getWorld();
     }
 
     @Override
