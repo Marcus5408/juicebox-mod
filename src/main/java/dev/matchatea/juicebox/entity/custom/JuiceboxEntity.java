@@ -10,11 +10,13 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 
 public class JuiceboxEntity extends TameableEntity {
@@ -109,5 +111,18 @@ public class JuiceboxEntity extends TameableEntity {
     @Override
     public @Nullable LivingEntity getOwner() {
         return super.getOwner();
+    }
+
+    @Override
+    public void onDeath(DamageSource source) {
+        if (!this.getWorld().isClient && this.isTamed()) {
+            LivingEntity owner = this.getOwner();
+            if (owner instanceof PlayerEntity player) {
+                player.sendMessage(
+                    Text.literal("Your Juicebox has died :("), false
+                );
+            }
+        }
+        super.onDeath(source);
     }
 }
