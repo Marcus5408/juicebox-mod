@@ -30,12 +30,12 @@ public class Juicebox implements ModInitializer {
         registerModEntities();
         FabricDefaultAttributeRegistry.register(ModEntities.JUICEBOX, JuiceboxEntity.createJuiceboxAttributes());
         BiomeModifications.addSpawn(
-                BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
-                SpawnGroup.CREATURE,
-                ModEntities.JUICEBOX,
-                100,
-                1,
-                4);
+            BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+            SpawnGroup.CREATURE,
+            ModEntities.JUICEBOX,
+            20,
+            1,
+            4);
         Item JUICEBOX_SPAWN_EGG = new SpawnEggItem(
                 ModEntities.JUICEBOX,
                 0xB7763F, // base color
