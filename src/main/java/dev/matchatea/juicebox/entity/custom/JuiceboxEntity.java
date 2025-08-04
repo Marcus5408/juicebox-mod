@@ -39,7 +39,7 @@ public class JuiceboxEntity extends TameableEntity {
                 Items.MELON_SLICE,
                 Items.SWEET_BERRIES), false));
         this.goalSelector.add(3, new FollowParentGoal(this, 0.6F));
-        this.goalSelector.add(4, new FollowOwnerGoal(this, 1.5, 6.0F, 2.0F, false));
+        this.goalSelector.add(4, new FollowOwnerGoal(this, 0.75F, 4.0F, 1.0F, false));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(7, new LookAroundGoal(this));
@@ -48,7 +48,7 @@ public class JuiceboxEntity extends TameableEntity {
     public static DefaultAttributeContainer.Builder createJuiceboxAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3F) // reduced speed
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5F)
                 .add(EntityAttributes.GENERIC_ARMOR, 10F);
     }
 
