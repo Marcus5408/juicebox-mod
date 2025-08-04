@@ -45,7 +45,7 @@ public class JuiceboxEntity extends TameableEntity {
                 Items.MELON_SLICE,
                 Items.SWEET_BERRIES), false));
         this.goalSelector.add(3, new FollowParentGoal(this, 0.6F));
-        this.goalSelector.add(4, new FollowOwnerGoal(this, 1.5, 10.0F, 2.0F, false));
+        this.goalSelector.add(4, new FollowOwnerGoal(this, 1.5, 6.0F, 2.0F, false));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(7, new LookAroundGoal(this));
