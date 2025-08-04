@@ -23,10 +23,10 @@ public class JuiceboxRenderer extends MobEntityRenderer<JuiceboxEntity, Juicebox
     @Override
     public void render(JuiceboxEntity mobEntity, float f, float g, MatrixStack matrixStack,
             VertexConsumerProvider vertexConsumerProvider, int i) {
-        if (mobEntity instanceof JuiceboxEntity) {
-            matrixStack.scale(0.6F, 0.6F, 0.6F);
+        if (mobEntity.isBaby()) {
+            matrixStack.scale(0.4F, 0.4F, 0.4F);
         } else {
-            matrixStack.scale(0.6F, 1F, 1F);
+            matrixStack.scale(0.6F, 0.6F, 0.6F);
         }
         super.render(mobEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
