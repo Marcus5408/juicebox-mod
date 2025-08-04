@@ -1,3 +1,7 @@
 {
-  "item.juicebox.juicebox_spawn_egg": "Orpheus Juicebox Spawn Egg"
+  "entity.juicebox.juicebox": "Orpheus in a Juicebox",
+  "item.juicebox.juicebox_spawn_egg": "Orpheus Juicebox Spawn Egg",
+  "entity.juicebox.juicebox.description": "A silly dinosaur in a cardboard juicebox.",
+  "death.attack.juicebox": "%1$s was juiced by Orpheus",
+  "spawn_egg.juicebox.juicebox": "Spawn Orpheus Juicebox"
 }
