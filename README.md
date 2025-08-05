@@ -6,4 +6,12 @@ Made for [Hack Club Mob Games](mob-games.hackclub.dev/).
 
 This is a mod which adds in the iconic Orpheus-in-a-juicebox from [Hack Club Juice](juice.hackclub.com) into Minecraft as a tameable pet.
 
+## Features
+
+- Adds the Juicebox mob to Minecraft
+- Tameable as a pet
+- Custom model and textures
+- Can follow the player
+- Can escape danger
+
 ![Juicebox in Minecraft](./game.png)
