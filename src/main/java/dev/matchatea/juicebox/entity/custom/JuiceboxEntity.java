@@ -27,8 +27,9 @@ public class JuiceboxEntity extends TameableEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new AnimalMateGoal(this, 1));
-        this.goalSelector.add(2, new TemptGoal(this, 0.6F, Ingredient.ofItems(
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 1));
+        this.goalSelector.add(3, new TemptGoal(this, 0.6F, Ingredient.ofItems(
                 Items.ENCHANTED_GOLDEN_APPLE,
                 Items.GOLDEN_APPLE,
                 Items.GOLDEN_CARROT,
@@ -40,11 +41,11 @@ public class JuiceboxEntity extends TameableEntity {
                 Items.HONEY_BOTTLE,
                 Items.MELON_SLICE,
                 Items.SWEET_BERRIES), false));
-        this.goalSelector.add(3, new FollowParentGoal(this, 0.6F));
         this.goalSelector.add(4, new FollowOwnerGoal(this, 0.75F, 4.0F, 1.0F, false));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
-        this.goalSelector.add(7, new LookAroundGoal(this));
+        this.goalSelector.add(5, new FollowParentGoal(this, 0.6F));
+        this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0));
+        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(8, new LookAroundGoal(this));
     }
 
     public static DefaultAttributeContainer.Builder createJuiceboxAttributes() {
