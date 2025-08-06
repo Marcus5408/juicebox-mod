@@ -14,9 +14,13 @@ public class ModEntities {
     public static final EntityType<JuiceboxEntity> JUICEBOX = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(Juicebox.MOD_ID, "juicebox"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, JuiceboxEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.5f, 2f)).build());
+                    .dimensions(EntityDimensions.fixed(1.5f, 2f))
+                    .trackRangeChunks(10)
+                    .trackedUpdateRate(3)
+                    .build());
 
     public static void registerModEntities() {
         Juicebox.LOGGER.info("Registering Entities for " + Juicebox.MOD_ID);
+        Juicebox.LOGGER.info("JUICEBOX entity registered: " + JUICEBOX);
     }
 }

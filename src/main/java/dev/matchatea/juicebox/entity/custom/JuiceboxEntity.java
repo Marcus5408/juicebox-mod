@@ -3,6 +3,7 @@ package dev.matchatea.juicebox.entity.custom;
 import dev.matchatea.juicebox.entity.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -15,6 +16,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
@@ -53,6 +57,19 @@ public class JuiceboxEntity extends TameableEntity {
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5F)
                 .add(EntityAttributes.GENERIC_ARMOR, 10F);
+    }
+
+    public static boolean canSpawn(EntityType<JuiceboxEntity> type, ServerWorldAccess world, SpawnReason spawnReason,
+            BlockPos pos, Random random) {
+        boolean canSpawn = MobEntity.canMobSpawn(type, world, spawnReason, pos, random);
+
+        // log spawn attempts
+        // if (!world.isClient() && spawnReason == SpawnReason.NATURAL) {
+        //     System.out.println("Juicebox spawn attempt at " + pos + " - can spawn: " +
+        //     canSpawn);
+        // }
+
+        return canSpawn;
     }
 
     @Override
@@ -120,8 +137,7 @@ public class JuiceboxEntity extends TameableEntity {
             LivingEntity owner = this.getOwner();
             if (owner instanceof PlayerEntity player) {
                 player.sendMessage(
-                    Text.literal("Your Juicebox has died :("), false
-                );
+                        Text.literal("Your Juicebox has died :("), false);
             }
         }
         super.onDeath(source);
